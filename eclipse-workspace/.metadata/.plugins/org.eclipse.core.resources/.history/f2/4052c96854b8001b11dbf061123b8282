@@ -1,0 +1,103 @@
+package project;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class bookChange {
+
+	private JFrame frame;
+	private JTextField txtName;
+	private JTextField txtNum;
+	private JTextField txtAuthor;
+	private JTextField txtPublisher;
+	private JTextField txtImage;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					bookChange window = new bookChange();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public bookChange() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(0, 0, 952, 622);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(344, 20, 53, 40);
+		frame.getContentPane().add(btnNewButton);
+		
+		txtName = new JTextField();
+		txtName.setBounds(219, 87, 256, 30);
+		frame.getContentPane().add(txtName);
+		txtName.setColumns(10);
+		
+		txtNum = new JTextField();
+		txtNum.setBounds(649, 87, 107, 30);
+		frame.getContentPane().add(txtNum);
+		txtNum.setColumns(10);
+		
+		txtAuthor = new JTextField();
+		txtAuthor.setBounds(219, 144, 256, 30);
+		frame.getContentPane().add(txtAuthor);
+		txtAuthor.setColumns(10);
+		
+		txtPublisher = new JTextField();
+		txtPublisher.setBounds(649, 148, 141, 30);
+		frame.getContentPane().add(txtPublisher);
+		txtPublisher.setColumns(10);
+		
+		txtImage = new JTextField();
+		txtImage.setBounds(219, 205, 569, 30);
+		frame.getContentPane().add(txtImage);
+		txtImage.setColumns(10);
+		
+		JTextPane txtStory = new JTextPane();
+		txtStory.setBounds(219, 273, 569, 220);
+		frame.getContentPane().add(txtStory);
+		
+		JButton btnChange = new JButton("");
+		btnChange.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String name = txtName.getText();
+				String author =txtAuthor.getText();
+			}
+		});
+		btnChange.setBounds(411, 519, 135, 30);
+		frame.getContentPane().add(btnChange);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SM2127\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\\uAD00\uB9AC\uC790,\uB85C\uADF8\uC778,\uC8FC\uAC04\uD504\uB85C\uADF8\uB7A8\\\uAD00\uB9AC\uC790,\uB85C\uADF8\uC778,\uC8FC\uAC04\uD504\uB85C\uADF8\uB7A8\\manager_programadd.png"));
+		lblNewLabel.setBounds(0, 0, 936, 583);
+		frame.getContentPane().add(lblNewLabel);
+	}
+}

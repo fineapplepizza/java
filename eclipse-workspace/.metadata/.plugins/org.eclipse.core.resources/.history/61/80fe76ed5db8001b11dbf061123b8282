@@ -1,0 +1,90 @@
+package project;
+
+
+public class bookManagementVO {
+	//도서제목,저자,출판사를 관리할 수 있는 클래스
+	String name;
+	String author;
+	String publisher;
+	String image;
+	String story;
+	int borrow_book;
+	
+
+	//도서전체조회 생성자 메소드 생성
+	public bookManagementVO(String name,String author, String publisher,String image,String story, int borrow_book) {
+		this.name = name;
+		this.author = author;
+		this.publisher = publisher;
+		this.image = image;
+		this.story = story;
+		this.borrow_book = borrow_book;
+	}
+	
+	public bookManagementVO(String name,String author, String publisher,int borrow_book) {
+		this.name = name;
+		this.author = author;
+		this.publisher = publisher;
+		this.borrow_book = borrow_book;
+	}
+	
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+
+	public String getStory() {
+		return story;
+	}
+
+	public void setStory(String story) {
+		this.story = story;
+	}
+	public String getImage() {
+		return image;
+	}
+
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	
+	
+	public final int getBorrow_book() {
+		return borrow_book;
+	}
+
+
+
+	public final void setBorrow_book(int borrow_book) {
+		this.borrow_book = borrow_book;
+	}
+
+
+	
+
+}

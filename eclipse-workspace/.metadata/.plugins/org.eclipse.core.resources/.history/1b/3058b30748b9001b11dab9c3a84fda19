@@ -1,0 +1,45 @@
+package project;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.Toolkit;
+
+public class bookDelivary {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					bookDelivary window = new bookDelivary();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public bookDelivary() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\SM2127\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\\uAD00\uB9AC\uC790,\uB85C\uADF8\uC778,\uC8FC\uAC04\uD504\uB85C\uADF8\uB7A8\\\uAD00\uB9AC\uC790,\uB85C\uADF8\uC778,\uC8FC\uAC04\uD504\uB85C\uADF8\uB7A8\\manager_bookdelivery.png"));
+		frame.setBounds(100, 100, 470, 374);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}

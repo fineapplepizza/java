@@ -1,0 +1,60 @@
+package project;
+
+public class bookDeliveryVO {
+	
+	private String id;
+	private String book_name;
+	private int number;
+	private String adrress;
+	private int deliverydate;
+	
+	public bookDeliveryVO(String id, String book_name, int number, String adrress,int deliverydate){
+		this.id = id;
+		this.book_name = book_name;
+		this.number = number;
+		this.adrress = adrress;
+		this.deliverydate = deliverydate;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getBook_name() {
+		return book_name;
+	}
+
+	public void setBook_name(String book_name) {
+		this.book_name = book_name;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public String getAdrress() {
+		return adrress;
+	}
+
+	public void setAdrress(String adrress) {
+		this.adrress = adrress;
+	}
+
+	public int getDeliverydate() {
+		return deliverydate;
+	}
+
+	public void setDeliverydate(int deliverydate) {
+		this.deliverydate = deliverydate;
+	}
+	
+
+}

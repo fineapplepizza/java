@@ -1,0 +1,83 @@
+package project;
+
+import java.awt.EventQueue;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class bookDelivary {
+
+	private JFrame frame;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					bookDelivary window = new bookDelivary();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public bookDelivary() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(0, 0, 952, 622);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(74, 176, 824, 354);
+		frame.getContentPane().add(scrollPane);
+		Controller control = new Controller();
+		//배달서비스를 조회할 ArrayList생성
+		ArrayList<bookDeliveryVO>list = control.Delivery();
+		//컬럼명 지정
+		Object col[]= {"ID","책이름","번호","주소","배달날짜"};
+		//Object배열로 배달 조회 불러오기
+		Object data[][]= new Object[list.size()][5];
+	    for(int i=0;i<data.length;i++) {
+	    	for(int j=0;j<data[i].length;j++) {
+	    		if(j == 0) {
+	    			data[i][j]=list.get(i).getId();
+	    		}if(j == 1) {
+	    			data[i][j]=list.get(i).getBook_name();
+	    		}if(j == 2) {
+	    			data[i][j]=list.get(i).getNumber();
+	    		}if(j == 3) {
+	    			data[i][j]=list.get(i).getAdrress();
+	    		}if(j == 4) {
+	    			data[i][j]=list.get(i).getDeliverydate();
+	    		}
+	    	}
+	    }
+		table = new JTable(data,col);
+		scrollPane.setViewportView(table);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SM2127\\Documents\\\uCE74\uCE74\uC624\uD1A1 \uBC1B\uC740 \uD30C\uC77C\\\uAD00\uB9AC\uC790,\uB85C\uADF8\uC778,\uC8FC\uAC04\uD504\uB85C\uADF8\uB7A8\\\uAD00\uB9AC\uC790,\uB85C\uADF8\uC778,\uC8FC\uAC04\uD504\uB85C\uADF8\uB7A8\\manager_bookdelivery.png"));
+		lblNewLabel.setBounds(0, 0, 936, 583);
+		frame.getContentPane().add(lblNewLabel);
+	}
+
+}
